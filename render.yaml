@@ -2,7 +2,7 @@ services:
   - type: web
     name: kitchenflex-api
     runtime: docker
-    plan: starter
+    plan: free
     region: frankfurt
     dockerfilePath: ./Dockerfile
     healthCheckPath: /api/health
