@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: kitchenflex-api
+    runtime: docker
+    plan: starter
+    region: frankfurt
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: KITCHENFLEX_ACCESS_TOKEN
+        generateValue: true
+      - key: RECIPE_MODEL
+        value: gpt-4o-mini
+      - key: CORS_ORIGINS
+        value: "*"
